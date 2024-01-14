@@ -1,0 +1,16 @@
+.sr-only {
+    position: absolute; 
+    left: -9999px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.logo-agency {
+    width: 2.5rem;
+    height: 2.5rem;
+}
