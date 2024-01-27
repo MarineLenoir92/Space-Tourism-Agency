@@ -14,3 +14,72 @@
     width: 2.5rem;
     height: 2.5rem;
 }
+
+#openHamburgerBtn, #closeHamburgerBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#menu {
+    position: fixed; 
+    top: 0; 
+    right: -80%; 
+    width: 70%;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1000; 
+    background-color: var(--primary-color);
+}
+
+#menu.active {
+    right: 0;
+}
+
+#closeHamburgerBtn {
+    position: absolute;
+    top: 2rem;
+    right: 10%;
+}
+
+#closeHamburgerBtn:hover .hamburger-menu {
+    width: 2rem;
+    height: 2rem;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding-top: 6rem;
+    padding-left: 2rem;
+    margin: 0;
+}
+
+li {
+    line-height: 3rem;
+}
+
+li:nth-child(2) span {
+    margin-right: 0.18rem;
+}
+
+.navNumber, .navSubMenu {
+    color: var(--tertiary-color);
+    font-family: var(--subtitle-font-family);
+    font-size: 1rem;
+    letter-spacing: 0.16rem;
+    cursor: pointer;
+}
+
+.navNumber {
+    font-weight: 700;
+}
+
+.navSubMenu  {
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+li:hover {
+    transform: scale(1.05);
+}
