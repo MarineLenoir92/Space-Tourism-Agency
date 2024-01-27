@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('../assets/fonts/BarlowCondensed-Thin.ttf') format('ttf'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bellefair';
+  src: url('../assets/fonts/Bellefair-Regular.ttf') format('ttf'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/fonts/Barlow-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
     --primary-color: #FFF;
     --secondary-color: #D0D6F9;
@@ -7,6 +28,10 @@
     --default-font-family: 'Arial', sans-serif;
     --title-font-family: 'Bellefair', sans-serif;
     --subtitle-font-family: 'Barlow Condensed', sans-serif;
-    --text-font-family: 'Barlow', sans-serif;
+    --text-font-family: 'Barlow';
   }
 
+  :focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+  }
