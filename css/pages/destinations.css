@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../../assets/images/destinations/background-destination-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+}
+
+.destination-presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+}
+
+.pick-destination {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.312rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+span {
+    font-family: var(--subtitle-font-family);
+    font-size: 1rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.16rem;
+}
+
+h1, li {
+    font-family: var(--subtitle-font-family);
+    text-transform: uppercase;
+    line-height: normal;
+    letter-spacing: 0.16rem;
+    font-weight: 100;
+    margin: 0.5rem;
+}
+
+.destination-image {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destination-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 0.312rem;
+    margin: auto;
+}
+
+.destination-list {   
+    font-size: 0.875rem;
+    color: var(--secondary-color); 
+}
+
+.destination-name {
+    font-family: var(--title-font-family);
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    line-height: normal;
+    letter-spacing: 0.16rem;
+    font-weight: 100;
+    margin: auto;
+}
+
+.destination-description {
+    font-family: var(--text-font-family);
+    font-size: 0.937rem;
+    color: var(--secondary-color);
+    margin: 0 2rem;
+    text-align: center;
+    line-height: 1.5rem
+}
+
+.separator {
+    background-color: var(--text-color);
+    color: #979797;
+    width: 85%;
+    margin: 1.5rem;
+}
+
+.destination-distance, .destination-timetravel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.destination-info {
+    font-family: var(--text-font-family);
+    font-size: 0.875rem;
+    font-weight: 100;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.16rem;
+}
+
+.info {
+    font-family: var(--title-font-family);
+    font-size: 1.75rem;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.16rem;
+    margin: auto;
+}
