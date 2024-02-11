@@ -108,7 +108,7 @@ h1, li {
     letter-spacing: 0.16rem;
 }
 
-.info {
+.distance-info, .time-info {
     font-family: var(--title-font-family);
     font-size: 1.75rem;
     font-weight: 100;
