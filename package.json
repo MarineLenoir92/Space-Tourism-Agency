@@ -1,0 +1,23 @@
+{
+  "name": "spaceagency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarineLenoir92/Space-Tourism-Agency.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarineLenoir92/Space-Tourism-Agency/issues"
+  },
+  "homepage": "https://github.com/MarineLenoir92/Space-Tourism-Agency#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
