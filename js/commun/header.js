@@ -77,7 +77,3 @@ function manageToggleMenu() {
 
 displayHeader();
 manageToggleMenu();
-
-
-
-
