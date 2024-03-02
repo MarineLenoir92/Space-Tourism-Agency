@@ -1,24 +1,25 @@
 const dataURL = 'data.json';
+let destinationsData;
+const navItems = document.querySelectorAll('.destination-list');
+const infoImage = document.getElementsByClassName('destination-image')[0];
+const infoName = document.getElementsByClassName('destination-name')[0];
+const infoDescription = document.getElementsByClassName('destination-description')[0];
+const infoDistance = document.getElementsByClassName('distance-info')[0];
+const infoTime = document.getElementsByClassName('time-info')[0];
 
-document.addEventListener('DOMContentLoaded', function() {
-    const infoImage = document.getElementsByClassName('destination-image')[0];
-    const infoName = document.getElementsByClassName('destination-name')[0];
-    const infoDescription = document.getElementsByClassName('destination-description')[0];
-    const infoDistance = document.getElementsByClassName('distance-info')[0];
-    const infoTime = document.getElementsByClassName('time-info')[0];
-
-    const navItems = document.querySelectorAll('.destination-list');
+document.addEventListener('DOMContentLoaded', function() { 
 
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
 
-            let destinationsData = data.destinations;
+            destinationsData = data.destinations;
 
             destinationsData.forEach((destination, index) => {
                 navItems[index].textContent = destination.name;
                 if(index === 0) {
                     navItems[index].classList.add('active');
+                    navItems[index].setAttribute('aria-selected', 'true');
                 }
             });
             
@@ -38,22 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             navItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    item.classList.add('active');
-                    
-                    navItems.forEach((otherItem, otherIndex) => {
-                        if (otherIndex !== index) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-            
-                    const selectedDestination = destinationsData[index];
-                    
-                    infoImage.src = selectedDestination.images.webp;
-                    infoImage.alt = 'Photo of destination: ' +  selectedDestination.name;
-                    infoName.innerHTML = selectedDestination.name;
-                    infoDescription.innerHTML = selectedDestination.description;
-                    infoDistance.innerHTML = selectedDestination.distance;
-                    infoTime.innerHTML = selectedDestination.travel;
+                    handleDestinationClick(item, index);
+            });
+                item.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleDestinationClick(item, index);
+                    }
                 });
             });
         })
@@ -62,3 +53,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 });
+
+function handleDestinationClick(item, index) {
+    item.classList.add('active');
+    item.setAttribute('aria-selected', 'true');
+                    
+    navItems.forEach((otherItem, otherIndex) => {
+        if (otherIndex !== index) {
+            otherItem.classList.remove('active');
+            otherItem.setAttribute('aria-selected', 'false');
+        }
+
+        const selectedDestination = destinationsData[index];
+                    
+        infoImage.src = selectedDestination.images.webp;
+        infoImage.alt = 'Photo of destination: ' +  selectedDestination.name;
+        infoName.innerHTML = selectedDestination.name;
+        infoDescription.innerHTML = selectedDestination.description;
+        infoDistance.innerHTML = selectedDestination.distance;
+        infoTime.innerHTML = selectedDestination.travel;
+    });
+}
