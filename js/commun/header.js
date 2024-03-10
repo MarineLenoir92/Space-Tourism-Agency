@@ -14,9 +14,9 @@ function displayHeader() {
             <img class="hamburger-menu" src="./assets/images/home/icon-close.svg"  alt="Close Toggle Menu" aria-hidden="true">
         </button> 
         <ul>
-            <li class="listMenu"><span class="navNumber">00&emsp;</span><a href="#" class="navSubMenu">Home</a></li>
-            <li class="listMenu"><span class="navNumber">01&emsp;</span><a href="#" class="navSubMenu">Destination</a></li>
-            <li class="listMenu"><span class="navNumber">02&emsp;</span><a href="#" class="navSubMenu">Crew</a></li>
+            <li class="listMenu"><span class="navNumber">00&emsp;</span><a href="./index.html" class="navSubMenu">Home</a></li>
+            <li class="listMenu"><span class="navNumber">01&emsp;</span><a href="./destinations.html" class="navSubMenu">Destination</a></li>
+            <li class="listMenu"><span class="navNumber">02&emsp;</span><a href="./crews.html" class="navSubMenu">Crew</a></li>
             <li class="listMenu"><span class="navNumber">03&emsp;</span><a href="#" class="navSubMenu">Technology</a></li>
         </ul>
     </nav>
