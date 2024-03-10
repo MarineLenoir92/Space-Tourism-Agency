@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.crew-presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+}
+
+.pick-crew {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.312rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-family: var(--subtitle-font-family);
+    text-transform: uppercase;
+    line-height: normal;
+    letter-spacing: 0.16rem;
+    font-weight: 100;
+    margin: 0.5rem;
+}
+
+span {
+    font-family: var(--subtitle-font-family);
+    font-size: 1rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.16rem;
+}
+
+.crew-image {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.separator {
+    background-color: var(--text-color);
+    color: #979797;
+    width: 85%;
+    margin-top: -0.5rem;
+}
+
+.crew-nav {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 1.5rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+li {
+    color: var(--text-secondary-color);
+}
+
+li::marker {
+    font-size: 1.5rem;
+}
+
+.crew-fonction, .crew-name{
+    font-family: var(--title-font-family);
+    text-transform: uppercase;
+    line-height: normal;
+    letter-spacing: 0.16rem;
+    font-weight: 100;
+    margin: auto;
+}
+
+.crew-fonction {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+}
+
+.crew-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.crew-description {
+    font-family: var(--text-font-family);
+    font-size: 0.937rem;
+    color: var(--secondary-color);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1.5rem
+}
