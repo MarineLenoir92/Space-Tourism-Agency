@@ -43,7 +43,7 @@ span {
 }
 
 .crew-image {
-    width: 40%;
+    height: 15.937rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -56,21 +56,33 @@ span {
 }
 
 .crew-nav {
+    list-style-type: none;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
     padding: 0;
-    gap: 1.5rem;
-    margin-top: -0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 2rem;
+    gap: 1rem;
 }
 
-li {
-    color: var(--text-secondary-color);
+.crew-list {  
+    font-size: 1.3rem;
+    color: var(--secondary-color); 
+    font-family: var(--subtitle-font-family);
+    text-transform: uppercase;
+    line-height: normal;
+    font-weight: 100;
 }
 
-li::marker {
-    font-size: 1.5rem;
+.crew-list:hover, .crew-list.active {   
+    font-weight: 400;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color); 
+    width: 1.687rem;
+    height: 1.687rem;
 }
 
 .crew-fonction, .crew-name{
