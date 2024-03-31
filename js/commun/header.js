@@ -17,7 +17,7 @@ function displayHeader() {
             <li class="listMenu"><span class="navNumber">00&emsp;</span><a href="./index.html" class="navSubMenu">Home</a></li>
             <li class="listMenu"><span class="navNumber">01&emsp;</span><a href="./destinations.html" class="navSubMenu">Destination</a></li>
             <li class="listMenu"><span class="navNumber">02&emsp;</span><a href="./crews.html" class="navSubMenu">Crew</a></li>
-            <li class="listMenu"><span class="navNumber">03&emsp;</span><a href="#" class="navSubMenu">Technology</a></li>
+            <li class="listMenu"><span class="navNumber">03&emsp;</span><a href="./technology.html" class="navSubMenu">Technology</a></li>
         </ul>
     </nav>
     <div class="menu">
