@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
+    background-image: url('../../assets/images/technology/background-technology-mobile.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,13 +9,13 @@ body {
     overflow-x: hidden;
 }
 
-.crew-presentation {
+.technology-presentation {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.625rem;
 }
 
-.pick-crew {
+.pick-technology {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -42,20 +42,17 @@ span {
     letter-spacing: 0.16rem;
 }
 
-.crew-image {
-    height: 15.937rem;
+.technology-image {
+    width:100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.separator {
-    background-color: var(--text-color);
-    color: #979797;
-    width: 85%;
-    margin-top: -0.5rem;
+.technology-menu {
+    margin-top: 2rem;
 }
 
-.crew-nav {
+.technology-nav {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -64,14 +61,13 @@ span {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
     padding: 0;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.crew-list {  
+.technology-list {  
     font-size: 1.3rem;
     color: var(--secondary-color); 
     font-family: var(--subtitle-font-family);
-    text-transform: uppercase;
     line-height: 190%;
     font-weight: 100;
     border-radius: 50%;
@@ -80,32 +76,34 @@ span {
     height: 2.5rem;
 }
 
-.crew-list:hover, .crew-list.active {   
+.technology-list:hover, .technology-list.active {   
     font-weight: 600;
     background-color: var(--primary-color);
     color: var(--tertiary-color); 
 }
 
-.crew-fonction, .crew-name{
-    font-family: var(--title-font-family);
-    text-transform: uppercase;
+.technology-subtitle, .technology-name {
     line-height: normal;
-    letter-spacing: 0.16rem;
     font-weight: 100;
     margin: auto;
 }
 
-.crew-fonction {
+.technology-subtitle {
+    font-family: var(--subtitle-font-family);
     font-size: 1rem;
-    color: var(--text-secondary-color);
+    color: var(--secondary-color);
+    letter-spacing: 0.16rem;
 }
 
-.crew-name {
+.technology-name {
+    font-family: var(--title-font-family);
     font-size: 1.5rem;
     color: var(--primary-color);
+    text-transform: uppercase;
+
 }
 
-.crew-description {
+.technology-description {
     font-family: var(--text-font-family);
     font-size: 0.937rem;
     color: var(--secondary-color);
@@ -113,5 +111,6 @@ span {
     margin-right: 2rem;
     margin-top: 1rem;
     text-align: center;
-    line-height: 1.5rem
+    line-height: 1.5rem;
+    text-transform: none;
 }
