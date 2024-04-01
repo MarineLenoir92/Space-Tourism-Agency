@@ -83,3 +83,31 @@ li:nth-child(2) span {
 li:hover {
     transform: scale(1.05);
 }
+
+@media (min-width: 47.9rem) and (max-width: 64rem) {
+    .header {
+        margin: 1rem 2rem;
+    }
+    .logo-agency {
+        width: 3rem;
+        height: 3rem;
+    }
+    .menu-md {
+        position: static;
+    }
+    .listMenu-md {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    .listMenu-md:last-child {
+        padding-right: 0;
+    }
+    .listMenu-md:hover, .listMenu-md.active {
+        font-size: 1.2rem;
+        border-bottom: 4px solid var(--primary-color);
+    }
+    .navSubMenu {
+        color: var(--primary-color);
+        font-weight: 100;
+    }
+}
