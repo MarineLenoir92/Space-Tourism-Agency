@@ -81,3 +81,33 @@ p {
 .explore-link:hover .background-circle {
     background-color: var(--secondary-color);
 }
+
+@media (min-width: 47.9rem) and (max-width: 64rem) { 
+    body {
+        background-image: url('../assets/images/home/background-home-tablet.jpg');  
+    }
+    main {
+        margin-top: 6rem;
+    }
+    h1 {
+        font-size: 1.25rem;
+    }
+    h2 {
+        font-size: 9.375rem;
+    }
+    p {
+        font-size: 1rem;
+        margin: 0 10rem;
+        line-height: 2rem;
+    }
+    .more-informations {
+        margin-top: 12rem;
+    }
+    .explore-link {
+        font-size: 2rem;
+    }
+    .background-circle {
+        width: 15.125rem;
+        height: 15.125rem;
+    }
+}

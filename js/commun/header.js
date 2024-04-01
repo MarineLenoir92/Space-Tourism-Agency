@@ -1,4 +1,35 @@
+const isAboveTablet = window.matchMedia('(min-width: 767px)').matches;
+
 function displayHeader() {
+    const template = document.createElement('template');
+
+    template.innerHTML=`
+    <header class="header">
+    <div class="logo">
+        <a href="./index.html" aria-label="Go to Home Page">
+            <span class="sr-only">Home Page Space Tourism Agency</span>
+            <img class="logo-agency" src="./assets/images/home/logo.svg" alt="Logo Space Tourism Agency" tabindex="1">
+        </a>
+    </div>
+    <nav id="menu-md">
+        <ul>
+            <li class="listMenu-md"><a href="./index.html" class="navSubMenu">Home</a></li>
+            <li class="listMenu-md"><a href="./destinations.html" class="navSubMenu">Destination</a></li>
+            <li class="listMenu-md"><a href="./crews.html" class="navSubMenu">Crew</a></li>
+            <li class="listMenu-md"><a href="./technology.html" class="navSubMenu">Technology</a></li>
+        </ul>
+    </nav>
+    </header>
+    `
+    document.body.insertAdjacentHTML('afterbegin', template.innerHTML);
+
+    const linkElement = document.createElement('link');
+    linkElement.rel = 'stylesheet';
+    linkElement.href = './css/commun/header.css'; 
+    document.head.appendChild(linkElement);
+};
+
+function displayMobileHeader() {
     const template = document.createElement('template');
 
     template.innerHTML=`
@@ -75,5 +106,9 @@ function manageToggleMenu() {
     });
 }
 
-displayHeader();
-manageToggleMenu();
+if(isAboveTablet){
+    displayHeader();
+}else{
+    displayMobileHeader();
+    manageToggleMenu();
+}
