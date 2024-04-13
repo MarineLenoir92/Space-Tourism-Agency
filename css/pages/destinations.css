@@ -2,10 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('../../assets/images/destinations/background-destination-mobile.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto;
+    height: 100vh;
 }
 
 .destination-presentation {
@@ -96,6 +93,12 @@ h1, li {
     margin: 1.5rem;
 }
 
+.destination-sub-presentation { 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
 .destination-distance, .destination-timetravel {
     display: flex;
     flex-direction: column;
@@ -122,3 +125,44 @@ h1, li {
     letter-spacing: 0.16rem;
     margin: auto;
 }
+
+@media (min-width: 47.9rem) and (max-width: 64rem) { 
+    body {
+        background-image: url('../../assets/images/destinations/background-destination-tablet.jpg');
+    }
+    .pick-destination {
+        justify-content: start;
+        margin-left: 3rem;
+    }
+    h1, span {
+        font-size: 1.25rem;
+    }
+    span {
+        margin-bottom: 0.2rem;
+    }
+    .destination-image {
+        width: 30%;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .destination-list {
+        font-size: 1rem;
+    }
+    .destination-name {
+        font-size: 5rem;
+        margin-top: 2rem;
+    }
+    .destination-description {
+        font-size: 1rem;
+        margin: 1rem 9rem;
+    }
+    .separator {
+        margin: 3.5rem;
+    }
+    .destination-sub-presentation { 
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+}    
