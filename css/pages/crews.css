@@ -13,7 +13,23 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.625rem;
+    grid-template-areas:
+    "number"
+    "image"
+    "separator"
+    "menu"
+    "title"
+    "subtitle"
+    "text";
 }
+
+.number { grid-area: number; }
+.image { grid-area: image; }
+.separator { grid-area: separator; }
+.menu { grid-area: menu; }
+.title { grid-area: title; }
+.subtitle { grid-area: subtitle; }
+.text { grid-area: text; }
 
 .pick-crew {
     display: flex;
@@ -115,3 +131,51 @@ span {
     text-align: center;
     line-height: 1.5rem
 }
+
+@media (min-width: 47.9rem) and (max-width: 64rem) { 
+    body {
+        background-image: url('../../assets/images/crew/background-crew-tablet.jpg');
+        overflow: hidden;
+    }
+    .crew-presentation {
+        grid-template-areas:
+        "number"
+        "title"
+        "subtitle"
+        "text"
+        "menu"
+        "image"
+        "separator";
+        grid-template-columns: auto 1fr;
+    }
+    .pick-crew {
+        justify-content: start;
+        margin-left: 3rem;
+    }
+    h1, span {
+        font-size: 1.25rem;
+    }
+    .separator {
+       width: 65%;
+    }
+    .crew-fonction {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .crew-name {
+        font-size: 2.5rem;
+        margin-top: 0.5rem;
+    }
+    .crew-description {
+        font-size: 1rem;
+        margin-left: 9rem;
+        margin-right: 9rem;
+    }
+    .crew-nav {
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .crew-image {
+        height: 31.937rem;
+    }
+}    
