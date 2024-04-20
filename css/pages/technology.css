@@ -114,3 +114,36 @@ span {
     line-height: 1.5rem;
     text-transform: none;
 }
+
+@media (min-width: 47.9rem) and (max-width: 64rem) { 
+    body {
+        background-image: url('../../assets/images/technology/background-technology-tablet.jpg');
+        overflow: hidden;
+    }
+    .pick-technology {
+        justify-content: start;
+        margin-left: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    h1, span {
+        font-size: 1.25rem;
+    }
+    .technology-nav {
+        gap: 1rem;
+    }
+    .technology-list {
+        line-height: 230%;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .technology-name {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
+    .technology-description {
+        font-size: 1rem;
+        margin-left: 9rem;
+        margin-right: 9rem;
+    }
+}   
