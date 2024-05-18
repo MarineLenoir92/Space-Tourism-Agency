@@ -84,7 +84,17 @@ li:hover {
     transform: scale(1.05);
 }
 
-@media (min-width: 47.9rem) and (max-width: 64rem) {
+@media (min-width: 47.9rem) {
+    .number{
+        font-family: var(--subtitle-font-family);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 47.9rem) and (max-width: 63rem) {
     .header {
         margin: 1rem 2rem;
     }
@@ -105,6 +115,45 @@ li:hover {
     .listMenu-md:hover, .listMenu-md.active {
         font-size: 1.2rem;
         border-bottom: 4px solid var(--primary-color);
+    }
+    .navSubMenu {
+        color: var(--primary-color);
+        font-weight: 100;
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    .header {
+        align-items: flex-start;
+        margin: 2rem 3rem;
+        margin-right: 0;
+    }
+    .logo-agency {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    #menu-md {
+        position: static;
+        height: 5.06rem;
+    }
+    .listMenu-md {
+        display: inline-block;
+    }
+    .listMenu-md:last-child {
+        padding-right: 0;
+    }
+    .listMenu-md:hover, .listMenu-md.active {
+        font-size: 1.2rem;
+        border-bottom: 4px solid var(--primary-color);
+    }
+    #menu-md {
+        width: 70%;
+        backdrop-filter: blur(81.55px);
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 2.18rem;
     }
     .navSubMenu {
         color: var(--primary-color);
