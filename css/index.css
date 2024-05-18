@@ -111,3 +111,57 @@ p {
         height: 15.125rem;
     }
 }
+
+@media only screen and (min-width: 64rem) {
+    body {
+        background-image: url('../assets/images/home/background-home-desktop.jpg');
+    }
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 9rem;
+    }
+    p {
+        font-size: 1.125rem;
+    }
+    main {
+        display: flex;
+        margin-top: 8rem; 
+    }
+    .presentation, .more-informations {
+        flex: 50%;
+        margin: auto 0; 
+    }
+    .presentation {
+        text-align: justify;
+        padding-left: 4.375rem;
+        @media only screen and (min-width: 65rem) {
+            padding-left: 10.375rem;
+        }
+    }
+    .presentation > h1, p {
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
+    .presentation > h2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .more-informations {
+        padding-right: 4.375rem;
+        @media only screen and (min-width: 65rem) {
+            padding-right: 10.375rem;
+        }
+    }
+    .explore-link {
+        letter-spacing: 0.20rem;
+        @media only screen and (min-width: 65rem) {
+            font-size: 2.5rem;
+        }
+    }
+    .background-circle {
+        width: 15.37rem;
+        height: 15.37rem;
+    }
+}
