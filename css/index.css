@@ -127,7 +127,7 @@ p {
     }
     main {
         display: flex;
-        margin-top: 8rem; 
+        margin-top: 8rem;
     }
     .presentation, .more-informations {
         flex: 50%;

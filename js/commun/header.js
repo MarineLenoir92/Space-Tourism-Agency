@@ -13,10 +13,10 @@ function displayHeader() {
     </div>
     <nav id="menu-md">
         <ul>
-            <li class="listMenu-md"><span class="number">0 0</span><a href="./index.html" class="navSubMenu">Home</a></li>
-            <li class="listMenu-md"><span class="number">0 1</span><a href="./destinations.html" class="navSubMenu">Destination</a></li>
-            <li class="listMenu-md"><span class="number">0 2</span><a href="./crews.html" class="navSubMenu">Crew</a></li>
-            <li class="listMenu-md"><span class="number">0 3</span><a href="./technology.html" class="navSubMenu">Technology</a></li>
+            <li class="listMenu-md"><a href="./index.html" class="navSubMenu"><span class="number">00</span>Home</a></li>
+            <li class="listMenu-md"><a href="./destinations.html" class="navSubMenu"><span class="number">01</span>Destination</a></li>
+            <li class="listMenu-md"><a href="./crews.html" class="navSubMenu"><span class="number">02</span>Crew</a></li>
+            <li class="listMenu-md"><a href="./technology.html" class="navSubMenu"><span class="number">03</span>Technology</a></li>
         </ul>
     </nav>
     </header>
