@@ -1,8 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../../assets/images/destinations/background-destination-mobile.jpg');
-    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .destination-presentation {
@@ -47,6 +49,11 @@ h1, li {
     margin-right: auto;
 }
 
+.grid-right {
+    display: flex;
+    flex-direction: column;
+}
+
 .destination-nav {
     list-style-type: none;
     display: flex;
@@ -75,6 +82,7 @@ h1, li {
     letter-spacing: 0.16rem;
     font-weight: 100;
     margin: auto;
+    margin-top: 1rem;
 }
 
 .destination-description {
@@ -126,7 +134,7 @@ h1, li {
     margin: auto;
 }
 
-@media (min-width: 47.9rem) and (max-width: 64rem) { 
+@media (min-width: 47.9rem) and (max-width: 63rem) { 
     body {
         background-image: url('../../assets/images/destinations/background-destination-tablet.jpg');
     }
@@ -165,4 +173,69 @@ h1, li {
         align-items: center;
         padding-bottom: 3rem;
     }
-}    
+}
+
+@media only screen and (min-width: 64rem) {
+    body {
+        background-image: url('../../assets/images/destinations/background-destination-desktop.jpg');
+    }
+    h1, span {
+        font-size: 1.75rem;
+    }
+    span {
+        margin-bottom: 0;
+    }
+    main {
+        margin-bottom: 3rem;
+    }
+    .destination-presentation {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "title title"
+            "left right";
+        grid-column-gap: 1.875rem;    
+    }
+    .pick-destination {
+        grid-area: title;
+        justify-content: flex-start;
+        margin-left: 10rem;
+        margin-bottom: 5rem;
+    }
+    .destination-image {
+        grid-area: left;
+        width: 65%;
+        margin-left: 7rem;
+    }
+    .grid-right {
+        grid-area: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .destination-list {
+        font-size: 1rem;
+    }
+    .destination-name, .destination-description, .time-info {
+        margin-left: 0;
+    }
+    .destination-description, .destination-timetravel, .destination-distance {
+        text-align: justify;
+    }
+    .destination-name {
+        font-size: 6.25rem;
+    }
+    .destination-description {
+        font-size: 1.125rem;
+        margin-right: 6.5rem;
+    }
+    .separator {
+        margin-left: 0;
+        margin-bottom: 3rem;
+    }
+    .destination-sub-presentation {
+        flex-direction: row;
+        gap: 5rem;
+    }
+}
