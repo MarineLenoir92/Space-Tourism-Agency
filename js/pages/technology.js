@@ -1,70 +1,54 @@
 const dataURL = 'data.json';
 let technologiesData;
-const isDesktop = window.matchMedia('(min-width: 63rem) and (max-height:85rem)').matches;
+const isDesktop = window.matchMedia('(min-width: 63rem) and (max-height: 85rem)').matches;
 const navTechnologyItems = document.querySelectorAll('.technology-list');
-const infoTechnologyImage = document.getElementsByClassName('technology-image')[0];
-const infoTechnologyName = document.getElementsByClassName('technology-name')[0];
-const infoTechnologyDescription = document.getElementsByClassName('technology-description')[0];
+const infoTechnologyImage = document.querySelector('.technology-image');
+const infoTechnologyName = document.querySelector('.technology-name');
+const infoTechnologyDescription = document.querySelector('.technology-description');
 
-document.addEventListener('DOMContentLoaded', function() { 
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const data = await fetchData(dataURL);
+        technologiesData = data.technology;
 
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
+        updateTechnologyInfo(0);
+        navTechnologyItems[0].classList.add('active');
+        navTechnologyItems[0].setAttribute('aria-selected', 'true');
 
-            technologiesData = data.technology;
-
-            navTechnologyItems[0].classList.add('active');
-            navTechnologyItems[0].setAttribute('aria-selected', 'true');
-            
-            const technologyData = data.technology[0]; 
-            let technologyImg;
-            const technologyName = technologyData.name;
-            const technologyDescription = technologyData.description;
-
-            if(!isDesktop) {
-                technologyImg = technologyData.images.mobile;
-            } else {
-                technologyImg = technologyData.images.portrait;
-            }
-
-            infoTechnologyImage.src = technologyImg;
-            infoTechnologyImage.alt = 'Photo of technology: ' +  technologyName;
-            infoTechnologyName.innerHTML = technologyName;
-            infoTechnologyDescription.innerHTML = technologyDescription;
-
-            navTechnologyItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    handleTechnologyClick(item, index);
+        navTechnologyItems.forEach((item, index) => {
+            item.addEventListener('click', () => handleTechnologyClick(index));
+            item.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    handleTechnologyClick(index);
+                }
             });
-                item.addEventListener('keydown', function(event) {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        handleTechnologyClick(item, index);
-                    }
-                });
-            });
-        })
-        .catch(error => {
-            console.error('An error occurred during data recovery:', error);
         });
-
+    } catch (error) {
+        console.error('An error occurred during data recovery:', error);
+    }
 });
 
-function handleTechnologyClick(item, index) {
-    item.classList.add('active');
-    item.setAttribute('aria-selected', 'true');
-                    
-    navTechnologyItems.forEach((otherItem, otherIndex) => {
-        if (otherIndex !== index) {
-            otherItem.classList.remove('active');
-            otherItem.setAttribute('aria-selected', 'false');
-        }
+async function fetchData(url) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Network response was not ok');
+    return await response.json();
+}
 
-        const selectedTechnology = technologiesData[index];
-                    
-        infoTechnologyImage.src = !isDesktop ? selectedTechnology.images.mobile : selectedTechnology.images.portrait;
-        infoTechnologyImage.alt = 'Photo of technology: ' +  selectedTechnology.name;
-        infoTechnologyName.innerHTML = selectedTechnology.name;
-        infoTechnologyDescription.innerHTML = selectedTechnology.description;
+function updateTechnologyInfo(index) {
+    const { images, name, description } = technologiesData[index];
+    const technologyImg = isDesktop ? images.portrait : images.mobile;
+
+    infoTechnologyImage.src = technologyImg;
+    infoTechnologyImage.alt = `Photo of technology: ${name}`;
+    infoTechnologyName.innerHTML = name;
+    infoTechnologyDescription.innerHTML = description;
+}
+
+function handleTechnologyClick(index) {
+    navTechnologyItems.forEach((item, idx) => {
+        item.classList.toggle('active', idx === index);
+        item.setAttribute('aria-selected', idx === index);
     });
+
+    updateTechnologyInfo(index);
 }
