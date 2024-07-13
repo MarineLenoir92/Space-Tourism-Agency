@@ -135,7 +135,6 @@ span {
 @media (min-width: 47.9rem) and (max-width: 64rem) { 
     body {
         background-image: url('../../assets/images/crew/background-crew-tablet.jpg');
-        overflow: hidden;
     }
     .crew-presentation {
         grid-template-areas:
@@ -178,4 +177,51 @@ span {
     .crew-image {
         height: 31.937rem;
     }
-}    
+}
+
+@media only screen and (min-width: 65rem) {
+    body {
+        background-image: url('../../assets/images/crew/background-crew-desktop.jpg');
+    }
+    h1, span {
+        font-size: 1.75rem;
+    }
+    .crew-presentation {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "number image"
+        "title image"
+        "subtitle image"
+        "text image"
+        "menu image";
+        grid-column-gap: 10.875rem;
+        align-items: start;  
+    }
+    .image {
+        height: 35.937rem;
+        justify-self: start;
+        align-self: start;
+    }
+    .separator {
+        display: none;
+    }
+    .crew-fonction, .crew-name, .crew-description {
+        margin-left: 11.5rem;
+    }
+    .crew-nav {
+        margin-left: -4rem;
+    }
+    .crew-fonction {
+        font-size: 2rem;
+        margin-bottom: -0.5rem;
+    }
+    .crew-name {
+        font-size: 3.5rem;
+    }
+    .crew-description {
+        font-size: 1.125rem;
+        text-align: justify;
+    }
+    
+}
