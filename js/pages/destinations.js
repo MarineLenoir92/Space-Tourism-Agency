@@ -1,76 +1,64 @@
 const dataURL = 'data.json';
 let destinationsData;
 const navItems = document.querySelectorAll('.destination-list');
-const infoImage = document.getElementsByClassName('destination-image')[0];
-const infoName = document.getElementsByClassName('destination-name')[0];
-const infoDescription = document.getElementsByClassName('destination-description')[0];
-const infoDistance = document.getElementsByClassName('distance-info')[0];
-const infoTime = document.getElementsByClassName('time-info')[0];
+const infoImage = document.querySelector('.destination-image');
+const infoName = document.querySelector('.destination-name');
+const infoDescription = document.querySelector('.destination-description');
+const infoDistance = document.querySelector('.distance-info');
+const infoTime = document.querySelector('.time-info');
 
-document.addEventListener('DOMContentLoaded', function() { 
-
-    fetch('data.json')
-        .then(response => response.json())
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData(dataURL)
         .then(data => {
-
             destinationsData = data.destinations;
-
-            destinationsData.forEach((destination, index) => {
-                navItems[index].textContent = destination.name;
-                if(index === 0) {
-                    navItems[index].classList.add('active');
-                    navItems[index].setAttribute('aria-selected', 'true');
-                }
-            });
-            
-            const destinationData = data.destinations[0]; 
-            const destinationImg =  destinationData.images.webp;
-            const destinationName = destinationData.name;
-            const destinationDescription = destinationData.description;
-            const destinationDistance = destinationData.distance;
-            const destinationTimeTravel = destinationData.travel;
-
-            infoImage.src = destinationImg;
-            infoImage.alt = 'Photo of destination: ' +  destinationName;
-            infoName.innerHTML = destinationName;
-            infoDescription.innerHTML = destinationDescription;
-            infoDistance.innerHTML = destinationDistance;
-            infoTime.innerHTML = destinationTimeTravel;
-
-            navItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    handleDestinationClick(item, index);
-            });
-                item.addEventListener('keydown', function(event) {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        handleDestinationClick(item, index);
-                    }
-                });
-            });
+            initializeNavItems();
+            updateDestinationInfo(0);
+            setupNavEventListeners();
         })
-        .catch(error => {
-            console.error('An error occurred during data recovery:', error);
-        });
-
+        .catch(error => console.error('An error occurred during data recovery:', error));
 });
 
-function handleDestinationClick(item, index) {
-    item.classList.add('active');
-    item.setAttribute('aria-selected', 'true');
-                    
-    navItems.forEach((otherItem, otherIndex) => {
-        if (otherIndex !== index) {
-            otherItem.classList.remove('active');
-            otherItem.setAttribute('aria-selected', 'false');
-        }
+async function fetchData(url) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Network response was not ok');
+    return await response.json();
+}
 
-        const selectedDestination = destinationsData[index];
-                    
-        infoImage.src = selectedDestination.images.webp;
-        infoImage.alt = 'Photo of destination: ' +  selectedDestination.name;
-        infoName.innerHTML = selectedDestination.name;
-        infoDescription.innerHTML = selectedDestination.description;
-        infoDistance.innerHTML = selectedDestination.distance;
-        infoTime.innerHTML = selectedDestination.travel;
+function initializeNavItems() {
+    destinationsData.forEach((destination, index) => {
+        navItems[index].textContent = destination.name;
+        if (index === 0) {
+            navItems[index].classList.add('active');
+            navItems[index].setAttribute('aria-selected', 'true');
+        }
     });
+}
+
+function setupNavEventListeners() {
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => handleDestinationClick(index));
+        item.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                handleDestinationClick(index);
+            }
+        });
+    });
+}
+
+function handleDestinationClick(index) {
+    navItems.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+        item.setAttribute('aria-selected', i === index);
+    });
+    updateDestinationInfo(index);
+}
+
+function updateDestinationInfo(index) {
+    const { images, name, description, distance, travel } = destinationsData[index];
+    infoImage.src = images.webp;
+    infoImage.alt = `Photo of destination: ${name}`;
+    infoName.innerHTML = name;
+    infoDescription.innerHTML = description;
+    infoDistance.innerHTML = distance;
+    infoTime.innerHTML = travel;
 }
