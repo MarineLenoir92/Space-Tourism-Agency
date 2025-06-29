@@ -36,7 +36,7 @@ span {
     letter-spacing: 0.16rem;
 }
 
-h1, li {
+h1, li:not(.listMenu-md) {
     font-family: var(--subtitle-font-family);
     text-transform: uppercase;
     line-height: normal;
@@ -67,7 +67,8 @@ h1, li {
 
 .destination-list {   
     font-size: 0.875rem;
-    color: var(--secondary-color); 
+    color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .destination-list:hover, .destination-list.active {   
@@ -182,7 +183,7 @@ h1, li {
 
 @media only screen and (min-width: 65rem) {
     body {
-        background-image: url('../../assets/images/destinations/background-destination-desktop.jpg');
+        background-image: url('../../assets/images/home/background-home-desktop.jpg');
     }
     h1, span {
         font-size: 1.75rem;

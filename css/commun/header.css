@@ -42,11 +42,6 @@
     right: 10%;
 }
 
-#closeHamburgerBtn:hover .hamburger-menu {
-    width: 2rem;
-    height: 2rem;
-}
-
 #menu ul {
     list-style-type: none;
     padding-top: 6rem;
@@ -78,6 +73,11 @@ li:nth-child(2) span {
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.navSubMenu .number {
+    display: none;
 }
 
 li:hover {
@@ -102,7 +102,8 @@ li:hover {
         width: 3rem;
         height: 3rem;
     }
-    .menu-md {
+    .menu{
+        display: block;
         position: static;
     }
     .listMenu-md {
@@ -123,6 +124,9 @@ li:hover {
 }
 
 @media only screen and (min-width: 64rem) {
+    .navNumber, #closeHamburgerBtn, .menu {
+        display: none;
+    }
     .header {
         align-items: flex-start;
         margin: 2rem 3rem;
@@ -135,9 +139,15 @@ li:hover {
         width: 3.5rem;
         height: 3.5rem;
     }
-    #menu-md {
+    #menu {
+        display: flex;
         position: static;
         height: 5.06rem;
+        width: 70%;
+        backdrop-filter: blur(81.55px);
+        background-color: transparent;
+        transition: none;
+        z-index: 0;
     }
     .listMenu-md {
         display: inline-block;
@@ -149,14 +159,13 @@ li:hover {
         font-size: 1.2rem;
         border-bottom: 4px solid var(--primary-color);
     }
-    #menu-md {
-        width: 70%;
-        backdrop-filter: blur(81.55px);
-    }
-    ul {
+    #menu ul {
         display: flex;
         justify-content: center;
         gap: 2.18rem;
+        padding-top: 0;
+        padding-left: 0;
+        margin: auto;
     }
     .navSubMenu {
         color: var(--primary-color);
