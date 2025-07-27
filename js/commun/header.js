@@ -46,7 +46,7 @@ function manageToggleMenu() {
     const openNav = () => {
         sidenav.classList.add("active");
         sidenav.setAttribute('aria-expanded', 'true');
-        menuItems[0]?.focus();
+        openBtn.focus();
     };
 
     const closeNav = () => {
