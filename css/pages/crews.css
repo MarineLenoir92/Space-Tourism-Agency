@@ -38,6 +38,7 @@ body {
     align-items: center;
     gap: 0.312rem;
     margin-bottom: 1rem;
+    margin-right: 2.5rem;
 }
 
 h1 {
@@ -94,6 +95,7 @@ span {
     border: 1px solid var(--secondary-color);
     width: 2.5rem;
     height: 2.5rem;
+    cursor: pointer;
 }
 
 .crew-list:hover, .crew-list.active {   
