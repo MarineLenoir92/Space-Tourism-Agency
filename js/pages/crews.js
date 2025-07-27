@@ -19,7 +19,7 @@ function handleCrewClick(item, index) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const dataURL = 'data.json';
+    const dataURL = '/data.json';
     let crewsData;
 
     const navItemsCrew = document.querySelectorAll('.crew-list');

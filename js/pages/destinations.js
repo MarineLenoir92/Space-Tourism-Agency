@@ -1,4 +1,4 @@
-const dataURL = 'data.json';
+const dataURL = '/data.json';
 let destinationsData;
 const navItems = document.querySelectorAll('.destination-list');
 const infoImage = document.querySelector('.destination-image');

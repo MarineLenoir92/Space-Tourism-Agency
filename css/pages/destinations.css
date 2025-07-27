@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(../../assets/images/destinations/background-destination-mobile.jpg);
     background-size: cover;
     background-position: center;
