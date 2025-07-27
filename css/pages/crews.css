@@ -211,6 +211,9 @@ span {
     .crew-fonction, .crew-name, .crew-description {
         margin-left: 11.5rem;
     }
+    .crew-presentation .crews-menu {
+        display: block;
+    }
     .crew-nav {
         margin-left: -4rem;
     }

@@ -1,4 +1,4 @@
-const dataURL = 'data.json';
+const dataURL = '/data.json';
 let technologiesData;
 const isDesktop = window.matchMedia('(min-width: 63rem) and (max-height: 85rem)').matches;
 const navTechnologyItems = document.querySelectorAll('.technology-list');
