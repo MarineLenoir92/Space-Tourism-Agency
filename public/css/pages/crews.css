@@ -226,7 +226,7 @@ span {
     }
     .crew-description {
         font-size: 1.125rem;
-        text-align: justify;
+        text-align: left;
     }
     
 }

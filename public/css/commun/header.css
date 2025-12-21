@@ -84,6 +84,12 @@ li:hover {
     transform: scale(1.05);
 }
 
+.listMenu-md.active {
+    a {
+        font-weight: 700;
+    }
+}
+
 @media (min-width: 47.9rem) {
     .number{
         font-family: var(--subtitle-font-family);
@@ -116,6 +122,9 @@ li:hover {
     .listMenu-md:hover, .listMenu-md.active {
         font-size: 1.2rem;
         border-bottom: 4px solid var(--primary-color);
+        a {
+            font-weight: 100;
+        }
     }
     .navSubMenu {
         color: var(--primary-color);
@@ -158,6 +167,9 @@ li:hover {
     .listMenu-md:hover, .listMenu-md.active {
         font-size: 1.2rem;
         border-bottom: 4px solid var(--primary-color);
+        a {
+            font-weight: 100;
+        }
     }
     #menu ul {
         display: flex;
