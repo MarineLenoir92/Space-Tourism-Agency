@@ -67,13 +67,16 @@ h1, li:not(.listMenu-md) {
 
 .destination-list {   
     font-size: 0.875rem;
+    font-weight: 400 !important;
     color: var(--secondary-color);
     cursor: pointer;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
 .destination-list:hover, .destination-list.active {   
-    font-weight: 400;
+    font-weight: 700;
     border-bottom: 4px solid var(--primary-color);
+    text-shadow: none;
 }
 
 .destination-name {
@@ -227,7 +230,7 @@ h1, li:not(.listMenu-md) {
         margin-left: 0;
     }
     .destination-description, .destination-timetravel, .destination-distance {
-        text-align: justify;
+        text-align: left;
     }
     .destination-name {
         font-size: 6.25rem;

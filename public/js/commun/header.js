@@ -33,6 +33,12 @@ function manageDesktopMenu() {
     navLinks.forEach(link => {
         if (link.getAttribute('data-page') === currentPath) {
             link.classList.add('active');
+            const anchor = link.querySelector('a');
+            if (anchor) {
+                anchor.setAttribute('aria-current', 'page');
+            } else {
+                link.setAttribute('aria-current', 'page');
+            }
         }
     });
 }
@@ -42,6 +48,22 @@ function manageToggleMenu() {
     const openBtn = document.getElementById("openHamburgerBtn");
     const closeBtn = document.getElementById("closeHamburgerBtn");
     const menuItems = document.querySelectorAll('#menu a');
+
+    const currentPath = window.location.pathname.split('/').pop().split('.').shift();
+    menuItems.forEach(a => {
+        a.removeAttribute('aria-current');
+        const pageAttr = a.getAttribute('data-page');
+        const href = a.getAttribute('href') || '';
+        const hrefPage = href.split('/').pop().split('.').shift();
+        if (pageAttr === currentPath || hrefPage === currentPath) {
+            a.setAttribute('aria-current', 'page');
+            const parent = a.closest('.listMenu-md');
+            if (parent) parent.classList.add('active');
+        } else {
+            const parent = a.closest('.listMenu-md');
+            if (parent) parent.classList.remove('active');
+        }
+    });
 
     const openNav = () => {
         sidenav.classList.add("active");
