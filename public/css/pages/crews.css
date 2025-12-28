@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #0B0D17;
     background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
     background-size: cover;
     background-position: center;
@@ -136,6 +137,7 @@ span {
 
 @media (min-width: 47.9rem) and (max-width: 64rem) { 
     body {
+        background-color: #0B0D17;
         background-image: url('../../assets/images/crew/background-crew-tablet.jpg');
     }
     .crew-presentation {
@@ -183,6 +185,7 @@ span {
 
 @media only screen and (min-width: 65rem) {
     body {
+        background-color: #0B0D17;
         background-image: url('../../assets/images/crew/background-crew-desktop.jpg');
     }
     h1, span {
