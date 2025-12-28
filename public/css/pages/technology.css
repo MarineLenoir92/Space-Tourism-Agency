@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #0B0D17;
     background-image: url('../../assets/images/technology/background-technology-mobile.jpg');
     background-size: cover;
     background-position: center;
@@ -125,6 +126,7 @@ span {
 
 @media (min-width: 47.9rem) and (max-width: 63rem) { 
     body {
+        background-color: #0B0D17;
         background-image: url('../../assets/images/technology/background-technology-tablet.jpg');
         overflow: hidden;
     }
@@ -158,6 +160,7 @@ span {
 
 @media (min-width: 64rem) and (max-width: 69rem) and (max-height:85rem){ 
     body {
+        background-color: #0B0D17;
         background-image: url('../../assets/images/technology/background-technology-desktop.jpg');
         overflow: hidden;
     }
@@ -221,6 +224,7 @@ span {
 
 @media only screen and (min-width: 70rem) {
     body {
+        background-color: #0B0D17;
         background-image: url('../../assets/images/technology/background-technology-desktop.jpg');
         overflow: hidden;
     }
